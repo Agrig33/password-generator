@@ -1,16 +1,18 @@
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
 //Array of special characters
 var specialCharacters = [
-  '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '[', ']', '{', '}', 
-];
+  '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '[', ']', '{', '}'];
+
 var numericCharacters = ['0','1','2','3','4','5','6','7','8','9'];
 
-var lowerCasedCharacters = [
-  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-];
+var lowerCasedCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 
+'m', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 var upperCasedCharacters = [
-  'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-];
+  'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 
+  'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 function getPasswordOptions() {
 
@@ -18,18 +20,18 @@ var lenght = pareseInt(
   prompt('How many characters should your password be? Choose between 8-100')
 );
 
-if (isNaN(length) ===true) {
+if (isNaN(length) === true) {
   alert('Password length must be provided as a number');
   return;
 }
 
-if (length <8) {
+if (length < 8) {
   alert('Password must contain at least 8 characters');
   return;
 }
 
-if (length > 100){
-  alert('Password cannot exceed 101 characters');
+if (length > 100) {
+  alert('Password cannot exceed 100 characters');
   return;
 }
 
@@ -103,9 +105,9 @@ if (options.hasUpperCasedCharacters) {
   guaranteedCharacters.push(getRandom(upperCasedCharacters));
 }
 
-for (var i = 0; i < options.length; i ++) {
+for (var i = 0; i < options.length; i++) {
   var possibleCharacters = getRandom(possibleCharacters);
-  result.push(possibleCharacters);
+  result.push(possibleCharacter);
 }
 
 for (var i = 0; i < guaranteedCharacters.length; i++) {
@@ -115,17 +117,12 @@ for (var i = 0; i < guaranteedCharacters.length; i++) {
 return result.join('');
 }
 
-
-
-
-
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordText = document.querySelector('#password');
 
   passwordText.value = password;
 
